@@ -1,0 +1,123 @@
+:root{
+    --bg-primary: rgb(40, 40, 40);
+    --bg-secondary: rgb(230, 230, 230);
+    --text-primary: rgb(255, 255, 255);
+    --text-secondary: rgb(40, 40, 40);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    width: 80%;
+    margin: auto;
+    margin-top: 32px;
+}
+
+.clanok{
+    width: 100%;
+    color: var(--text-secondary);
+    display: grid;
+    grid-template-areas: 
+    'roh-hore-con roh-hore-con roh-hore-con roh-hore-con roh-hore-con nazov nazov'
+    'texto texto texto texto texto obrazok obrazok'
+    'roh-dole-con roh-dole-con roh-dole-con roh-dole-con preklik obrazok obrazok';
+}
+
+.nazov-container{
+    background-color: var(--bg-secondary);
+    border-radius: 2vw 2vw 0 0;
+    display: grid;
+    grid-area: nazov;
+}
+
+.nazov{
+    place-self: center;
+    font-size: 5vw;
+}
+
+.roh-container-hore{
+    background-color: var(--bg-secondary);
+    grid-area: roh-hore-con;
+    display: grid;
+}
+
+.roh-hore{
+    background-color: var(--bg-primary);
+    border-radius: 0 0 2vw 0;
+    width: 100%;
+}
+
+.obrazok-container{
+    background-color: var(--bg-secondary);
+    width: 100%;
+    border-radius: 0 0 2vw 0;
+    display: grid;
+    grid-area: obrazok;
+
+}
+
+.obrazok{
+    width: 75%;
+    place-self: center;
+    margin: 2vw 3vw 2vw 2vw;
+}
+
+.text-container{
+    background-color: var(--bg-secondary);
+    border-radius: 2vw 0 0 2vw;
+    display: grid;
+    grid-area: texto;
+}
+
+.text{
+    font-size: 2vw;
+    place-self: center;
+    padding: 2vw;
+}
+
+.roh-container-dole{
+    background-color: var(--bg-secondary);
+    grid-area: roh-dole-con;
+    display: grid;
+}
+
+.roh-dole{
+    background-color: var(--bg-primary);
+    border-radius: 0 2vw 0 0;
+    width: 100%;
+}
+
+.preklik-container{
+    background-color: var(--bg-secondary);
+    border-radius: 0 0 0 2vw;
+    display: grid;
+    grid-area: preklik;
+    padding: 12px;
+}
+
+.preklik{
+    width: 20vw;
+    height: 5vw;
+    font-size: 2vw;
+    place-self: center;
+    color: var(--text-primary);
+    background-color: rgb(15, 15, 75);
+    border: 1px solid var(--bg-primary);
+    padding: 8px 16px 8px 16px;
+    border-radius: 2vw;
+    box-shadow: rgba(15, 15, 75, .5) 0 2px 5px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.preklik:hover {
+  background-color: rgb(45, 45, 105);
+  font-size: 2.25vw;
+}
+
+

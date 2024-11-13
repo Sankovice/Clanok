@@ -1,0 +1,3 @@
+potom spravim css osobitne, pracuje sa mi stym lepsie ked to je ale v jednom
+
+tie farby atd su docasne, iba ako pomocka

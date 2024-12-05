@@ -1,0 +1,121 @@
+<html>
+<head>
+	<title> Stand In
+	</title>
+	<style>
+	ul {list-style-type: none;}
+
+	.text2{
+		font-family:Impact, 'Arial Narrow Bold', sans-serif;
+		color: white;
+		}
+	.text{
+		font-family:Impact, 'Arial Narrow Bold', sans-serif;
+		color: transparent; -webkit-text-stroke: 1px white;
+		margin: 0;
+
+		}
+
+		#cont1{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			background-color: lightblue;
+		}
+		#cont2a{
+			display: flex;
+			width: 45%;
+			height: 90%;
+			align-items: center;
+			background-color: lime;
+			justify-content: center;
+		}
+		
+		
+		#cont2b{
+			display: flex;
+			width: 45%;
+			height: 90%;
+			align-items: flex-end;
+			background-color: green;
+			justify-content: flex-end
+			}
+
+		.auto-fit-text {
+		  width: 90%; /* Responsive width */
+		  max-width: 300px; /* Limit the width for larger screens */
+		  height: 100%;
+		  display: flex;
+		  flex-direction: column; /* Stack elements vertically */
+		  align-items: center;
+		  justify-content: center;
+		  overflow: hidden;
+		  white-space: nowrap;
+		  font-size: 16px; /* Initial font size as fallback */
+		  border: 1px transparent;
+		  
+		}
+
+		/* Media query for smaller screens */
+		@media (max-width: 600px) {
+		  .auto-fit-text {
+			font-size: 14px; /* Adjust font size for small screens */
+		  }
+		}
+
+	</style>
+
+</head
+
+<body>
+	<div id="cont1">
+		<div class="text2" id="cont2a">
+			<h1> Novinky z Hubenky </h1>
+		</div>
+
+
+		<div class="text" id="cont2b">
+		  <div class="auto-fit-text" id="auto-fit">
+			<p class="text">CYPRUS</p>
+			<p class="text">ZÁVISLOSŤ</p>
+			<p class="text">HVIEZDY</p>
+			<p class="text">FINANCIE</p>
+			<p class="text">CHEESECAKE</p>
+			<p class="text">KOMIKS</p>
+			<p class="text">NOVÉ ZVONENIE</p>
+		</div>
+	</div>
+
+	<script>
+	  function fitTextToContainer(containerId) {
+		const container = document.getElementById(containerId);
+		const paragraphs = container.getElementsByClassName('text');
+
+		Array.from(paragraphs).forEach(paragraph => {
+		  let fontSize = 100; // Start with a large font size
+		  paragraph.style.fontSize = `${fontSize}px`;
+
+		  // Reduce font size until the text fits the container
+		  while (paragraph.scrollWidth > container.clientWidth && fontSize > 0) {
+			fontSize--;
+			paragraph.style.fontSize = `${fontSize}px`;
+		  }
+		});
+	  }
+
+	  // Call the function once the DOM is fully loaded
+	  window.addEventListener('DOMContentLoaded', () => {
+		fitTextToContainer('auto-fit');
+	  });
+
+	  // Optional: Adjust on window resize
+	  window.addEventListener('resize', () => {
+		fitTextToContainer('auto-fit');
+	  });
+	</script>	
+
+</body>
+</html>

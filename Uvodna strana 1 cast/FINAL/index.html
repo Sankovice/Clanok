@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stand In</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="cont1" class="cont">
+        <div class="text2" id="cont1A">
+            <h1>Novinky z Hubenky</h1>
+        </div>
+        <div class="text" id="cont1B">
+            <div class="auto-fit-text" id="auto-fit">
+                <p class="text">CYPRUS</p>
+                <p class="text">ZÁVISLOSŤ</p>
+                <p class="text">HVIEZDY</p>
+                <p class="text">FINANCIE</p>
+                <p class="text">CHEESECAKE</p>
+                <p class="text">KOMIKS</p>
+                <p class="text">NOVÉ ZVONENIE</p>
+                <p class="text">FILMY</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fitTextToContainer(containerId) {
+            const container = document.getElementById(containerId);
+            const paragraphs = container.getElementsByClassName('text');
+
+            Array.from(paragraphs).forEach(paragraph => {
+                let fontSize = 500; // Start with a large font size
+                paragraph.style.fontSize = `${fontSize}px`;
+
+                // Reduce font size until the text fits the container
+                while (paragraph.scrollWidth > container.clientWidth && fontSize > 0) {
+                    fontSize--;
+                    paragraph.style.fontSize = `${fontSize}px`;
+                }
+            });
+        }
+
+        // Call the function once the DOM is fully loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            fitTextToContainer('auto-fit');
+        });
+
+        // Optional: Adjust on window resize
+        window.addEventListener('resize', () => {
+            fitTextToContainer('auto-fit');
+        });
+    </script>
+</body>
+</html>
